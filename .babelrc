@@ -1,0 +1,20 @@
+{
+  "presets": ["@babel/preset-react"],
+  "plugins": [
+    ["styled-components", { "ssr": true }],
+    [
+      "module-resolver",
+      {
+        "root": ["."],
+        "alias": {
+          "components": "./src/components",
+          "atoms": "./design-system/atoms",
+          "molecules": "./design-system/molecules",
+          "organisms": "./design-system/organisms",
+          "fonts": "./styles/fonts",
+          "colors": "./styles/colors"
+        }
+      }
+    ]
+  ]
+}
