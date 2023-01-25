@@ -14,7 +14,6 @@ const Logo = styled.h2`
 font-family: 'Aboreto', cursive;
   font-size: ${medium};
   font-weight: ${regular};
-  text-align: center;
   color: ${secondary};
 `;
 

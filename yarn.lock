@@ -1515,7 +1515,15 @@ react-refresh@^0.14.0:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.14.0.tgz#4e02825378a5f227079554d4284889354e5f553e"
   integrity sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==
 
-react-router@^6.7.0:
+react-router-dom@^6.7.0:
+  version "6.7.0"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.7.0.tgz#0249f4ca4eb704562b8b0ff29caeb928c3a6ed38"
+  integrity sha512-jQtXUJyhso3kFw430+0SPCbmCmY1/kJv8iRffGHwHy3CkoomGxeYzMkmeSPYo6Egzh3FKJZRAL22yg5p2tXtfg==
+  dependencies:
+    "@remix-run/router" "1.3.0"
+    react-router "6.7.0"
+
+react-router@6.7.0:
   version "6.7.0"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.7.0.tgz#db262684c13b5c2970694084ae9e8531718a0681"
   integrity sha512-KNWlG622ddq29MAM159uUsNMdbX8USruoKnwMMQcs/QWZgFUayICSn2oB7reHce1zPj6CG18kfkZIunSSRyGHg==

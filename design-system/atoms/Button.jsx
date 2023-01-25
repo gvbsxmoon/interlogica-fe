@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { base, book } from "fonts";
+import { base, book, regular } from "fonts";
 import { secondary as secondaryColor, text as textColor, white, detail } from "colors";
 import React from "react";
 
@@ -13,10 +13,10 @@ const common = {
 };
 
 const primary = styled.button`
-background: ${props => props.disabled ? secondaryColor : '#D9D9D9'};
-  color: ${textColor};
+  background: transparent;
+  color: ${secondaryColor};
   padding: 1rem;
-  width: 100%;
+  border: 1px solid ${secondaryColor} !important;
   pointer-events: ${props => props.disabled && 'none'}
   &:hover {
     box-shadow: 0px 4px 12px ${secondaryColor}19;
@@ -25,10 +25,9 @@ background: ${props => props.disabled ? secondaryColor : '#D9D9D9'};
 `;
 
 const secondary = styled.button`
-  background: ${props => props.disabled ? detail : '#D9D9D9'};
+  background: ${props => props.disabled ? '#D9D9D9' : detail};
   color: ${white};
-  padding: 1rem;
-  width: 100%;
+  padding: 1rem 2.4rem;
   pointer-events: ${props => props.disabled && 'none'}
   &:hover {
     box-shadow: 0px 4px 12px ${detail}19;
@@ -37,17 +36,16 @@ const secondary = styled.button`
 `;
 
 const text = styled.button`
-  background: none;
-  color: ${secondaryColor};
-  padding: 0;
+  background: ${props => props.disabled ? '#D9D9D9' : 'none'};
+  color: ${textColor};
   margin: 0;
   ${common}
 `
 
-const Button = ({ children, variant, ...rest }) => {
+const Button = ({ children, variant, disabled, ...rest }) => {
   const El = Button.variants[variant] || primary;
   return (
-    <El {...rest} data-variant={variant}>
+    <El {...rest} data-variant={variant} disabled={disabled}>
       {children}
     </El>
   );
@@ -60,12 +58,14 @@ Button.variants = {
 };
 
 Button.defaultProps = {
-  variant: "primary"
+  variant: "primary",
+  disabled: false
 };
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
-  variant: PropTypes.string.isRequired
+  variant: PropTypes.string.isRequired,
+  disabled: PropTypes.bool
 };
 
 export default Button;

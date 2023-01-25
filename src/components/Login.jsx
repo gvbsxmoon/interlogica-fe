@@ -1,12 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import Showcase from "organisms/Showcase";
 import Button from "atoms/Button";
-import Typography from "atoms/Typo";
 import { Link } from "react-router-dom";
+import Typography from "atoms/Typo";
+import LoginForm from "organisms/LoginForm";
 
 const Container = styled.div`
   padding: 12rem 8rem 4rem 8rem;
+  height: 80vh;
+
+  display: grid;
+  place-content: center;
 
   @media screen and (max-width: 900px) {
     padding: 8rem 2rem 4rem 2rem;
@@ -25,23 +29,23 @@ const Pvt = styled.div`
   bottom: 0;
   right: 0;
   left: 0;
-  margin-bottom: 3.2rem
+  margin-bottom: 3.2rem;
 `;
 
-const Home = () => {
+function Login() {
   return (
     <>
-      <Container className="torta">
-        <Showcase />
+      <Container>
+        <LoginForm />
       </Container>
       <Pvt>
-          <Typography>Sei un operatore della pasticceria?</Typography>
-          <Link to="/login">
-            <Button variant="text">Accedi all'area privata</Button>
-          </Link>
-        </Pvt>
+        <Typography>Sei capitato qui per sbaglio?</Typography>
+        <Link to="/">
+          <Button variant="text">Torna alla home</Button>
+        </Link>
+      </Pvt>
     </>
   );
-};
+}
 
-export default Home;
+export default Login;
