@@ -58,7 +58,7 @@ const ProductCard = ({ imgUrl, name, availability, qt, price }) => {
         <Spacer />
         <Button
           style={{ width: "100%" }}
-          disabled={!availability}
+          disabled={true}
         >
           Scopri di più
         </Button>

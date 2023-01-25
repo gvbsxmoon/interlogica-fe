@@ -56,7 +56,6 @@ function ProductDelete() {
 
     try {
       await axios.delete(`http://localhost:3000/api/pastry/${token}/${id}`);
-      setInfo("Dolce eliminato.");
     } catch (e) {
       setInfo("Selezionare un prodotto valido.");
     }
