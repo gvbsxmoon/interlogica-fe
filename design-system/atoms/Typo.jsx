@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { xsmall, base, xMedium, medium, xLarge, regular, book } from "fonts";
+import { xsmall, base, xMedium, medium, xLarge, regular, book, semibold } from "fonts";
 import { text, secondary } from "colors";
 import React from "react";
 
@@ -41,6 +41,13 @@ const Caption = styled.p`
   color: ${text};
 `;
 
+const Error = styled.p`
+  font-size: ${xsmall};
+  font-weight: ${semibold};
+  text-align: center;
+  color: ${secondary};
+`;
+
 const Typography = ({ children, variant, ...rest }) => {
   const El = Typography.variants[variant] || primary;
   return (
@@ -57,6 +64,7 @@ Typography.variants = {
   paragraph: Paragraph,
   body: Body,
   caption: Caption,
+  error: Error
 };
 
 Typography.defaultProps = {

@@ -4,9 +4,15 @@ import Showcase from "organisms/Showcase";
 import Button from "atoms/Button";
 import Typography from "atoms/Typo";
 import { Link } from "react-router-dom";
+import { detail } from "colors";
 
 const Container = styled.div`
-  padding: 12rem 8rem 4rem 8rem;
+  padding-block: 8rem;
+  height: 80vh;
+
+  display: grid;
+  place-content: center;
+  gap: 3.2rem;
 
   @media screen and (max-width: 900px) {
     padding: 8rem 2rem 4rem 2rem;
@@ -25,7 +31,9 @@ const Pvt = styled.div`
   bottom: 0;
   right: 0;
   left: 0;
-  margin-bottom: 3.2rem
+  margin-bottom: 3.2rem;
+  background-color: ${detail};
+  height: 80px;
 `;
 
 const Home = () => {
@@ -35,11 +43,11 @@ const Home = () => {
         <Showcase />
       </Container>
       <Pvt>
-          <Typography>Sei un operatore della pasticceria?</Typography>
-          <Link to="/login">
-            <Button variant="text">Accedi all'area privata</Button>
-          </Link>
-        </Pvt>
+        <Typography style={{color: '#fafafa'}}>Sei un operatore della pasticceria?</Typography>
+        <Link to="/login">
+          <Button variant="text" style={{color: '#fafafa'}}>Accedi all'area privata</Button>
+        </Link>
+      </Pvt>
     </>
   );
 };

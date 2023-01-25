@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Button from "atoms/Button";
 import { Link } from "react-router-dom";
 import Typography from "atoms/Typo";
 import LoginForm from "organisms/LoginForm";
+import { useNavigate } from "react-router-dom";
+import { detail } from "colors";
 
 const Container = styled.div`
-  padding: 12rem 8rem 4rem 8rem;
+  padding-block: 8rem;
   height: 80vh;
 
   display: grid;
@@ -30,22 +32,33 @@ const Pvt = styled.div`
   right: 0;
   left: 0;
   margin-bottom: 3.2rem;
+  font-size: 1.2rem;
+  height: 80px;
+  background-color: ${detail};
 `;
 
-function Login() {
+const Login = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (sessionStorage.getItem("logged")) {
+      navigate("/backdoor");
+    }
+  });
+
   return (
     <>
       <Container>
         <LoginForm />
       </Container>
       <Pvt>
-        <Typography>Sei capitato qui per sbaglio?</Typography>
+        <Typography style={{color: 'white'}}>Sei capitato qui per sbaglio?</Typography>
         <Link to="/">
-          <Button variant="text">Torna alla home</Button>
+          <Button variant="text" style={{color: 'white'}}>Torna alla home</Button>
         </Link>
       </Pvt>
     </>
   );
-}
+};
 
 export default Login;

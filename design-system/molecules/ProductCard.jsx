@@ -58,7 +58,6 @@ const ProductCard = ({ imgUrl, name, availability, qt, price }) => {
         <Spacer />
         <Button
           style={{ width: "100%" }}
-          variant="secondary"
           disabled={!availability}
         >
           Scopri di più

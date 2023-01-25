@@ -12,19 +12,18 @@ const common = {
   cursor: "pointer"
 };
 
-const primary = styled.button`
-  background: transparent;
-  color: ${secondaryColor};
-  padding: 1rem;
-  border: 1px solid ${secondaryColor} !important;
+const rounded = styled.button`
+  background: ${white};
+  border-radius: 50% !important;
+  padding: 1.2rem;
+  display: grid;
+  place-content: center;
   pointer-events: ${props => props.disabled && 'none'}
-  &:hover {
-    box-shadow: 0px 4px 12px ${secondaryColor}19;
-  }
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15) !important;
   ${common}
 `;
 
-const secondary = styled.button`
+const primary = styled.button`
   background: ${props => props.disabled ? '#D9D9D9' : detail};
   color: ${white};
   padding: 1rem 2.4rem;
@@ -53,7 +52,7 @@ const Button = ({ children, variant, disabled, ...rest }) => {
 
 Button.variants = {
   primary,
-  secondary,
+  rounded,
   text,
 };
 

@@ -10,5 +10,5 @@ export const xxxLarge = "8rem";
 
 export const regular = "400";
 export const book = "500";
-export const semibold = "700";
-export const bold = "900";
+export const semibold = "600";
+export const bold = "700";
